@@ -1,61 +1,48 @@
-# 🎓 سامانه مدرن آموزش دانشگاه صنعتی شریف (Sharif Edu Modern Wrapper)
+# Sharif Edu Wrapper
 
-یک وب‌اپلیکیشن فوق‌العاده مدرن، زیبا، واکنش‌گرا و پرسرعت برای جایگزینی پنل قدیمی سامانه سپهر (`edu.sharif.edu`)، طراحی‌شده با **Go (Golang)** در بخش بک‌اند و **React + TypeScript + Tailwind CSS** در بخش فرانت‌اند.
+A clean web interface and API wrapper for Sharif University of Technology's student educational portal (`edu.sharif.edu`).
 
----
+## Tech Stack
 
-## 🌟 ویژگی‌های کلیدی
+- **Backend**: Go (`net/http`)
+- **Frontend**: React, TypeScript, Tailwind CSS, Vite
+- **Scraper**: Python (Selenium) for portal authentication and data extraction
 
-1. **داشبورد هوشمند (Smart Dashboard)**:
-   - نمایش کارت مشخصات دانشجو، شماره دانشجویی، رشته اصلی و دوره فرعی (ماینور).
-   - وضعیت تحصیلی لحظه‌ای، تاییدیه مجوز استاد راهنما و تاریخ انقضای معافیت تحصیلی نظام وظیفه.
-   - کارت‌های آماری مجموع واحدهای اخذ شده و دروس فعال.
-   - آژندای کلاس‌های امروز و کارت شمارش معکوس تا اولین امتحان پیش‌رو.
+## Getting Started
 
-2. **برنامه هفتگی کلاسی (Interactive Weekly Timetable)**:
-   - تقویم ماتریسی ۵ روزه (شنبه تا چهارشنبه، از ساعت ۰۷:۳۰ تا ۱۸:۰۰).
-   - تفکیک رنگی هر درس با نمایش دقیق ساعت، استاد و محل برگزاری (ساختمان ابن‌سینا، تالارها، دانشکده کامپیوتر).
-   - سازگار با موبایل، تبلت و دسکتاپ با قابلیت فیلتر بر اساس روز و خروجی چاپ.
+### Prerequisites
 
-3. **دروس نیم‌سال جاری (Course Cards)**:
-   - کارت‌های تفصیلی و شیک برای تمامی ۷ درس اخذ شده با واحدهای مربوطه.
-   - نام اساتید، تعداد ثبت‌نامی‌ها، زمان کلاس، ساعت امتحان و ملاحظات آموزشی.
-   - دکمه اتصال مستقیم به کلاس‌های مجازی شریف (`vc.sharif.edu`).
-   - جستجوی آنی بر اساس نام درس، استاد یا کد درس.
+- [Go](https://go.dev/) 1.21+
+- [Node.js](https://nodejs.org/) 18+ and npm
 
-4. **برنامه امتحانات پایان‌ترم (Final Exam Timeline)**:
-   - تایم‌لاین امتحانات به ترتیب تاریخ از ۲۷ دی تا ۷ بهمن.
-   - مجهز به سیستم تشخیص خودکار تداخل امتحانی (Clash Detector).
-   - امکان دانلود فایل تقویم استاندارد (`.ics`) جهت افزودن خودکار به Google Calendar / Apple Calendar.
+### 1. Build Frontend
 
-5. **شبیه‌ساز و تخمین آنلاین معدل (Interactive GPA Simulator)**:
-   - اسلایدرهای روان برای پیش‌بینی نمره هر درس (از ۰ تا ۲۰) با ضریب واحد هر درس.
-   - محاسبه لحظه‌ای معدل کل ترم جاری و نمایش وضعیت افتخار (الف / ممتاز، عادی، مشروط).
-   - دکمه‌های پیش‌تنظیم سریع (هدف الف ۱۸.۵، هدف ۱۶، ریست).
+```bash
+cd frontend
+npm install
+npm run build
+```
 
-6. **طراحی مدرن و تم دارک/لایت**:
-   - تایپوگرافی فارسی اصیل با فونت **وزیرمتن (Vazirmatn)**.
-   - پالت رنگی سورمه‌ای / آبی شریف با جلوه‌های بلور و شیشه‌ای (Glassmorphism).
-   - سوییچ آنی حالت شب و روز.
-
----
-
-## 🚀 نحوه اجرا
-
-### اجرای مستقیم با باینری مستقل Go:
-کل فرانت‌اند درون بک‌اند Go کامپایل شده و در قالب یک تک‌فایل مستقل اجرا می‌شود:
+### 2. Run Backend
 
 ```bash
 cd backend
-./edu-gateway
+go run main.go
 ```
-سپس در مرورگر خود آدرس زیر را باز کنید:
-👉 **http://localhost:8080**
 
-### اجرای محیط توسعه فرانت‌اند (اختیاری):
+The application will be available at `http://localhost:8080`.
+
+### Development
+
+To run the frontend dev server with hot reload:
+
 ```bash
 cd frontend
 npm run dev
 ```
-آدرس محیط توسعه Vite:
-👉 **http://localhost:3000**
+
+The dev server runs at `http://localhost:3000` and proxies API requests to `http://localhost:8080`.
+
+## License
+
+[MIT](LICENSE)
