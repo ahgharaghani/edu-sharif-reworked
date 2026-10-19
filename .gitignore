@@ -21,7 +21,7 @@ __pycache__/
 *.pytest_cache/
 
 # Sensitive files / logs
-scraped_data/cookies.json
+scraped_data/
 *.log
 .env
 .env.local
