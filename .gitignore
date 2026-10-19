@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+ENV/
+env/
+
+# Binaries & build artifacts
+backend/edu-gateway
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# Sensitive files / logs
+scraped_data/cookies.json
+*.log
+.env
+.env.local
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
